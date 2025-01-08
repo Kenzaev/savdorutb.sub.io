@@ -110,16 +110,29 @@
             display: block;
         }
         .popup .play-button {
-            padding: 10px 20px;
-            background-color: #FF5733;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
             color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
+            text-decoration: none;
+            transition: transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .popup .play-button:hover {
-            background-color: #FF3300;
+            transform: scale(1.1);
+        }
+        .ios-button {
+            background-color: #007AFF;
+        }
+        .android-button {
+            background-color: #3DDC84;
+        }
+        .popup .play-button i {
+            font-size: 24px;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -132,16 +145,16 @@
         <a href="#" class="social-button home-button" id="home-button">
             <i class="fas fa-home"></i>
         </a>
-        <a href="https://www.instagram.com/____no_name____.__" class="social-button instagram-button">
+        <a href="https://www.instagram.com/your_instagram_username" class="social-button instagram-button">
             <i class="fab fa-instagram"></i>
         </a>
-        <a href="https://vk.com/id756665575" class="social-button vk-button">
+        <a href="https://vk.com/your_vk_username" class="social-button vk-button">
             <i class="fab fa-vk"></i>
         </a>
         <a href="https://www.youtube.com/your_youtube_channel" class="social-button youtube-button">
             <i class="fab fa-youtube"></i>
         </a>
-        <a href="https://t.me/dilovar023" class="social-button telegram-button">
+        <a href="https://t.me/your_telegram_channel" class="social-button telegram-button">
             <i class="fab fa-telegram"></i>
         </a>
     </div>
@@ -150,7 +163,12 @@
         <p>Здесь вы найдете полезную информацию и ссылки на наши социальные сети. Подписывайтесь и следите за новостями!</p>
     </div>
     <div class="popup" id="popup">
-        <button class="play-button" id="play-button">Играть</button>
+        <a href="https://apps.apple.com/us/app/garena-free-fire-the-cobra/id1300146617?referrer=utm_source%3D7179520584" class="play-button ios-button" id="ios-button">
+            <i class="fab fa-apple"></i>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.dts.freefiremax&referrer=utm_source%3D7179520584" class="play-button android-button" id="android-button">
+            <i class="fab fa-android"></i>
+        </a>
     </div>
     <script>
         document.getElementById('theme-toggle').addEventListener('click', function() {
@@ -163,10 +181,7 @@
         document.getElementById('home-button').addEventListener('click', function() {
             document.getElementById('popup').classList.add('show');
         });
-
-        document.getElementById('play-button').addEventListener('click', function() {
-            window.open('https://play.google.com/store/apps/details?id=com.dts.freefireth&hl=en&gl=US', '_blank');
-        });
     </script>
 </body>
 </html>
+
