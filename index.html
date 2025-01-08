@@ -1,179 +1,32 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Интернет-магазин</title>
+    <title>Подписка на Telegram-канал</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1em;
             text-align: center;
+            margin-top: 50px;
         }
-
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 1em;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1em;
-            width: 100%;
-            max-width: 1200px;
-        }
-
-        @media (max-width: 600px) {
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .product-card {
-            border: 1px solid #ddd;
-            padding: 1em;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover {
-            transform: scale(1.05);
-        }
-
-        .product-card img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .product-card button {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 0.5em;
-            margin: 0.5em;
-            cursor: pointer;
-        }
-
-        .product-card button:hover {
-            background-color: #45a049;
-        }
-
-        .cart {
-            margin-top: 20px;
-        }
-
-        .cart-item {
-            margin: 5px 0;
-        }
-
-        .btn {
-            margin: 5px;
-            padding: 10px;
-            background-color: #28a745;
+        .subscribe-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #0088cc;
             color: white;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
         }
-
-        .btn:hover {
-            background-color: #218838;
+        .subscribe-button:hover {
+            background-color: #005f99;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Добро пожаловать</h1>
-        <input type="text" id="search-bar" placeholder="Поиск...">
-    </header>
-    <main>
-        <section class="gallery" id="product-gallery">
-            <!-- Продукты будут добавлены здесь через JavaScript -->
-        </section>
-        <section class="cart">
-            <h2>Корзина</h2>
-            <div id="cart-items"></div>
-            <button class="btn" onclick="checkout()">Оформить заказ</button>
-        </section>
-    </main>
-    <script>
-        // Пример массива товаров
-        let products = JSON.parse(localStorage.getItem('products')) || [
-            { name: "Товар 1", price: 100, video: "https://youtube.com/video1", image: "image1.jpg" },
-            { name: "Товар 2", price: 200, video: "https://youtube.com/video2", image: "image2.jpg" }
-        ];
-
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-        // Функция для отображения товаров
-        function displayProducts() {
-            const productsDiv = document.getElementById("product-gallery");
-            productsDiv.innerHTML = '';
-            products.forEach(product => {
-                const productDiv = document.createElement("div");
-                productDiv.className = "product-card";
-                productDiv.innerHTML = `
-                    <h2>${product.name}</h2>
-                    <img src="${product.image}" alt="${product.name}" width="100">
-                    <p>Цена: ${product.price}₽</p>
-                    <button class="btn" onclick="orderNow('${product.name}')">Заказать сейчас</button>
-                    <button class="btn" onclick="addToCart('${product.name}', ${product.price})">В корзину</button>
-                    <button class="btn" onclick="viewVideo('${product.video}')">Обзор</button>
-                `;
-                productsDiv.appendChild(productDiv);
-            });
-        }
-
-        // Функция для отображения корзины
-        function displayCart() {
-            const cartItemsDiv = document.getElementById("cart-items");
-            cartItemsDiv.innerHTML = '';
-            cart.forEach(item => {
-                const cartItemDiv = document.createElement("div");
-                cartItemDiv.className = "cart-item";
-                cartItemDiv.innerHTML = `
-                    <p>${item.name} - ${item.price}₽</p>
-                `;
-                cartItemsDiv.appendChild(cartItemDiv);
-            });
-        }
-
-        // Функции для кнопок
-        function orderNow(name) {
-            window.open(`https://wa.me/YOUR_PHONE_NUMBER?text=Я хочу заказать ${name}`, '_blank');
-        }
-
-        function addToCart(name, price) {
-            cart.push({ name, price });
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${name} добавлен в корзину!`);
-            displayCart();
-        }
-
-        function viewVideo(videoUrl) {
-            window.open(videoUrl, '_blank');
-        }
-
-        function checkout() {
-            if (cart.length > 0) {
-                const cartItems = cart.map(item => `${item.name} - ${item.price}₽`).join(', ');
-                window.open(`https://wa.me/YOUR_PHONE_NUMBER?text=Я хочу заказать: ${cartItems}`, '_blank');
-            } else {
-                alert('Ваша корзина пуста');
-            }
-        }
-
-        displayProducts(); // Вызов функции для отображения товаров
-        displayCart(); // Вызов функции для отображения корзины
-    </script>
+    <h1>Подпишитесь на наш Telegram-канал</h1>
+    <a href="https://t.me/your_channel_username" class="subscribe-button">Подписаться</a>
 </body>
 </html>
+
