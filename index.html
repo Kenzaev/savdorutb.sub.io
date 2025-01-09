@@ -59,6 +59,8 @@
             text-align: center;
             margin-top: 100px;
             padding: 20px;
+            position: relative;
+            z-index: 1;
         }
         .content h1 {
             font-size: 2em;
@@ -134,6 +136,25 @@
         .popup .play-button i {
             font-size: 24px;
         }
+        .game-container {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background-color: #000;
+            z-index: 1000;
+        }
+        .game-container.show {
+            display: block;
+        }
+        .game-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -170,6 +191,9 @@
             <i class="fab fa-android"></i>
         </a>
     </div>
+    <div class="game-container" id="game-container">
+        <iframe src="https://ff.garena.com/play" allowfullscreen></iframe>
+    </div>
     <script>
         document.getElementById('theme-toggle').addEventListener('click', function() {
             document.body.classList.toggle('dark-mode');
@@ -181,6 +205,15 @@
         document.getElementById('home-button').addEventListener('click', function() {
             document.getElementById('popup').classList.add('show');
         });
+
+        document.getElementById('ios-button').addEventListener('click', function() {
+            document.getElementById('game-container').classList.add('show');
+        });
+
+        document.getElementById('android-button').addEventListener('click', function() {
+            document.getElementById('game-container').classList.add('show');
+        });
     </script>
 </body>
 </html>
+
