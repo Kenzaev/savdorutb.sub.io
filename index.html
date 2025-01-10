@@ -147,21 +147,23 @@
         }
         .product {
             display: flex;
+            flex-direction: column;
             align-items: center;
             margin-bottom: 20px;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
+            text-align: center;
         }
         .product img {
-            width: 100px;
-            height: 100px;
+            width: 100%;
+            height: auto;
             object-fit: cover;
-            margin-right: 20px;
+            margin-bottom: 10px;
             border-radius: 5px;
         }
         .product-info {
-            flex: 1;
+            width: 100%;
         }
         .product-info h3 {
             font-size: 1.2em;
@@ -174,6 +176,19 @@
         .product-info .price {
             font-size: 1.2em;
             color: #E1306C;
+            margin-bottom: 10px;
+        }
+        .product-info .add-to-cart {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .product-info .add-to-cart:hover {
+            background-color: #0056b3;
         }
         .newsletter {
             margin-top: 50px;
@@ -284,6 +299,30 @@
         .navbar a:hover {
             color: #007BFF;
         }
+        @media (max-width: 768px) {
+            .header {
+                position: static;
+                margin-top: 20px;
+                display: flex;
+                justify-content: center;
+            }
+            .social-button {
+                margin: 0 5px;
+            }
+            .content {
+                margin-top: 20px;
+            }
+            .navbar {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar a {
+                margin: 5px 0;
+            }
+            .marketplace, .newsletter, .reviews, .contact {
+                padding: 10px;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -322,19 +361,21 @@
     <div class="marketplace" id="marketplace">
         <h2>Наш маркетплейс</h2>
         <div class="product">
-            <img src="https://via.placeholder.com/100" alt="Product 1">
+            <img src="https://via.placeholder.com/150" alt="Product 1">
             <div class="product-info">
                 <h3>Product 1</h3>
                 <p>Описание товара 1.</p>
                 <p class="price">$19.99</p>
+                <button class="add-to-cart">Добавить в корзину</button>
             </div>
         </div>
         <div class="product">
-            <img src="https://via.placeholder.com/100" alt="Product 2">
+            <img src="https://via.placeholder.com/150" alt="Product 2">
             <div class="product-info">
                 <h3>Product 2</h3>
                 <p>Описание товара 2.</p>
                 <p class="price">$29.99</p>
+                <button class="add-to-cart">Добавить в корзину</button>
             </div>
         </div>
         <!-- Добавьте больше товаров по аналогии -->
@@ -383,6 +424,14 @@
 
         document.getElementById('home-button').addEventListener('click', function() {
             document.getElementById('popup').classList.add('show');
+        });
+
+        // Функция для добавления товара в корзину
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.parentElement.querySelector('h3').innerText;
+                alert(`${productName} добавлен в корзину!`);
+            });
         });
     </script>
 </body>
