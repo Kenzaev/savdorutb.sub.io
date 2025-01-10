@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,11 +31,12 @@
             margin-bottom: 10px;
             color: white;
             text-decoration: none;
-            transition: transform 0.2s;
+            transition: transform 0.2s, background-color 0.3s;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .social-button:hover {
             transform: scale(1.1);
+            background-color: #333;
         }
         .instagram-button {
             background-color: #E1306C;
@@ -119,11 +120,12 @@
             margin: 10px;
             color: white;
             text-decoration: none;
-            transition: transform 0.2s;
+            transition: transform 0.2s, background-color 0.3s;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .popup .play-button:hover {
             transform: scale(1.1);
+            background-color: #333;
         }
         .ios-button {
             background-color: #007AFF;
@@ -157,10 +159,34 @@
             background-color: #007BFF;
             color: white;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
             margin: 0 10px;
         }
         .filters button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+            width: 200px;
+        }
+        .search-bar button {
+            padding: 10px;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .search-bar button:hover {
             background-color: #0056b3;
         }
         .product {
@@ -208,10 +234,11 @@
             background-color: #007BFF;
             color: white;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
         .product-info .add-to-cart:hover {
             background-color: #0056b3;
+            transform: scale(1.05);
         }
         .newsletter {
             margin-top: 50px;
@@ -239,10 +266,11 @@
             background-color: #007BFF;
             color: white;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
         .newsletter button:hover {
             background-color: #0056b3;
+            transform: scale(1.05);
         }
         .reviews {
             margin-top: 50px;
@@ -298,10 +326,11 @@
             background-color: #007BFF;
             color: white;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
         .contact form button:hover {
             background-color: #0056b3;
+            transform: scale(1.05);
         }
         .navbar {
             position: fixed;
@@ -336,12 +365,13 @@
             background-color: #007BFF;
             color: white;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
         .cart:hover {
             background-color: #0056b3;
+            transform: scale(1.05);
         }
         .cart i {
             font-size: 24px;
@@ -371,6 +401,9 @@
         }
         .cart-popup .cart-item {
             margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .cart-popup .cart-item h4 {
             font-size: 1em;
@@ -379,6 +412,31 @@
         .cart-popup .cart-item p {
             font-size: 0.9em;
             color: #777;
+        }
+        .cart-popup .cart-item button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #FF0000;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .cart-popup .cart-item button:hover {
+            background-color: #cc0000;
+        }
+        .cart-popup .clear-cart {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #FF0000;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        .cart-popup .clear-cart:hover {
+            background-color: #cc0000;
         }
         @media (max-width: 768px) {
             .header {
@@ -409,6 +467,14 @@
             }
             .filters button {
                 margin: 5px 0;
+            }
+            .search-bar {
+                flex-direction: column;
+                align-items: center;
+            }
+            .search-bar input {
+                width: 100%;
+                margin-bottom: 10px;
             }
         }
     </style>
@@ -452,6 +518,10 @@
             <button onclick="filterProducts('all')">Все</button>
             <button onclick="filterProducts('category1')">Категория 1</button>
             <button onclick="filterProducts('category2')">Категория 2</button>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Поиск товаров..." id="search-input" onkeyup="searchProducts()">
+            <button onclick="searchProducts()">Поиск</button>
         </div>
         <div class="product category1">
             <img src="https://via.placeholder.com/150" alt="Product 1">
@@ -506,6 +576,7 @@
         <h3>Ваша корзина</h3>
         <div id="cart-items"></div>
         <p id="cart-total">Общая сумма: $0.00</p>
+        <button class="clear-cart" onclick="clearCart()">Очистить корзину</button>
     </div>
     <div class="popup" id="popup">
         <a href="https://apps.apple.com/us/app/garena-free-fire-the-cobra/id1300146617?referrer=utm_source%3D7179520584" class="play-button ios-button" id="ios-button">
@@ -544,10 +615,10 @@
             cartItems.innerHTML = '';
             let total = 0;
 
-            cart.forEach(item => {
+            cart.forEach((item, index) => {
                 const cartItem = document.createElement('div');
                 cartItem.classList.add('cart-item');
-                cartItem.innerHTML = `<h4>${item.name}</h4><p>$${item.price.toFixed(2)}</p>`;
+                cartItem.innerHTML = `<h4>${item.name}</h4><p>$${item.price.toFixed(2)}</p><button onclick="removeFromCart(${index})">Удалить</button>`;
                 cartItems.appendChild(cartItem);
                 total += item.price;
             });
@@ -555,10 +626,33 @@
             cartTotal.innerText = `Общая сумма: $${total.toFixed(2)}`;
         }
 
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function clearCart() {
+            cart = [];
+            updateCart();
+        }
+
         function filterProducts(category) {
             const products = document.querySelectorAll('.product');
             products.forEach(product => {
                 if (category === 'all' || product.classList.contains(category)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        function searchProducts() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const products = document.querySelectorAll('.product');
+            products.forEach(product => {
+                const productName = product.querySelector('h3').innerText.toLowerCase();
+                if (productName.includes(query)) {
                     product.style.display = 'block';
                 } else {
                     product.style.display = 'none';
