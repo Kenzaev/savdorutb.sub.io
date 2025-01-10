@@ -11,7 +11,7 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #ffffff;
             line-height: 1.6;
             transition: background-color 0.3s, color 0.3s;
         }
@@ -22,20 +22,21 @@
         }
 
         header {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #ffffff;
+            color: #000000;
             padding: 1em;
             text-align: center;
             position: relative;
+            border-bottom: 1px solid #ccc;
         }
 
         .menu-button {
             position: absolute;
             top: 10px;
             left: 10px;
-            background-color: #45a049;
-            border: none;
-            color: white;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            color: #000000;
             padding: 0.5em;
             cursor: pointer;
             border-radius: 5px;
@@ -56,7 +57,7 @@
         }
 
         .menu-button:hover {
-            background-color: #388e3c;
+            background-color: #f0f0f0;
             transform: scale(1.1);
         }
 
@@ -65,16 +66,16 @@
             position: absolute;
             top: 50px;
             left: 10px;
-            background-color: #4CAF50;
+            background-color: #ffffff;
             border-radius: 5px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
 
         .menu-panel button {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            color: #000000;
             padding: 0.5em 1em;
             border-radius: 5px;
             cursor: pointer;
@@ -84,7 +85,7 @@
         }
 
         .menu-panel button:hover {
-            background-color: #388e3c;
+            background-color: #f0f0f0;
             transform: scale(1.1);
         }
 
@@ -104,7 +105,7 @@
         }
 
         .product-card {
-            background-color: white;
+            background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding: 1.5em;
@@ -149,9 +150,9 @@
         }
 
         .product-card button {
-            background-color: #4CAF50;
+            background-color: #007bff;
             border: none;
-            color: white;
+            color: #ffffff;
             padding: 0.5em 1em;
             margin: 0.5em;
             border-radius: 5px;
@@ -160,7 +161,7 @@
         }
 
         .product-card button:hover {
-            background-color: #388e3c;
+            background-color: #0056b3;
             transform: scale(1.1);
         }
 
@@ -168,7 +169,7 @@
             margin-top: 20px;
             width: 100%;
             max-width: 600px;
-            background-color: white;
+            background-color: #ffffff;
             border-radius: 8px;
             padding: 1em;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -187,9 +188,9 @@
         }
 
         .cart-item button {
-            background-color: #f44336;
+            background-color: #dc3545;
             border: none;
-            color: white;
+            color: #ffffff;
             padding: 0.5em;
             margin: 0.5em;
             border-radius: 5px;
@@ -198,7 +199,7 @@
         }
 
         .cart-item button:hover {
-            background-color: #d32f2f;
+            background-color: #c82333;
             transform: scale(1.1);
         }
 
@@ -206,7 +207,7 @@
             margin: 5px;
             padding: 10px;
             background-color: #28a745;
-            color: white;
+            color: #ffffff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -228,12 +229,12 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.4);
+            background-color: rgba(0, 0, 0, 0.4);
             padding-top: 60px;
         }
 
         .modal-content {
-            background-color: #fefefe;
+            background-color: #ffffff;
             margin: 5% auto;
             padding: 20px;
             border: 1px solid #888;
@@ -271,7 +272,7 @@
             margin-top: 20px;
             width: 100%;
             max-width: 600px;
-            background-color: white;
+            background-color: #ffffff;
             border-radius: 8px;
             padding: 1em;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -345,7 +346,7 @@
         }
 
         .image-slider-buttons button {
-            background-color: rgba(76, 175, 80, 0.7);
+            background-color: rgba(0, 123, 255, 0.7);
             border: none;
             color: white;
             padding: 10px;
@@ -359,7 +360,7 @@
         }
 
         .image-slider-buttons button:hover {
-            background-color: #388e3c;
+            background-color: #0056b3;
             transform: scale(1.1);
         }
 
@@ -388,7 +389,7 @@
             width: 100%;
             max-width: 400px;
             height: 400px;
-            background-color: white;
+            background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 1;
@@ -400,8 +401,8 @@
         }
 
         .chat-header {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #007bff;
+            color: #ffffff;
             padding: 10px;
             text-align: center;
             border-top-left-radius: 8px;
@@ -479,7 +480,7 @@
             right: 180px;
             background-color: transparent;
             border: none;
-            color: white;
+            color: #000000;
             font-size: 24px;
             cursor: pointer;
             transition: transform 0.3s;
@@ -561,7 +562,7 @@
             <button class="btn" onclick="addToCartFromModal()">Добавить в корзину</button>
             <h3>Отзывы:</h3>
             <div id="modalProductReviews"></div>
-            <button class="btn" onclick="openChat()">Открыть чат</button>
+            <button class="btn" onclick="openTelegramChat()">Открыть чат в Telegram</button>
         </div>
     </div>
 
@@ -614,7 +615,7 @@
                     <button class="btn" onclick="addToCart('${product.name}', ${product.price})">В корзину</button>
                     <button class="btn" onclick="viewVideo('${product.video}')">Обзор</button>
                     ${isAdmin ? `<button class="btn" onclick="deleteProduct(${index})">Удалить</button>` : ''}
-                    <button class="btn" onclick="openReviewsModal(${index})">Отзывы</button>
+                    <button class="btn" onclick="openTelegramChat()">Отзывы</button>
                 `;
                 productsDiv.appendChild(productDiv);
             });
@@ -885,6 +886,11 @@
         // Функция для переключения темы
         function toggleTheme() {
             document.body.classList.toggle('dark-mode');
+        }
+
+        // Функция для открытия чата в Telegram
+        function openTelegramChat() {
+            window.open('https://t.me/yourchannel', '_blank');
         }
     </script>
 </body>
