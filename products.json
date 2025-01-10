@@ -4,8 +4,8 @@
         "price": 200,
         "video": "https://www.youtube.com/watch?v=example",
         "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
+            "https://www.bing.com/images/search?view=detailV2&ccid=E0NwXM1T&id=50AA6C8D8A1664044018CBA3CCBCF93BB1040C0B&thid=OIP.E0NwXM1T1cHOy_GuvvFmUAHaJL&mediaurl=https%3a%2f%2fmtscdn.ru%2fupload%2fiblock%2fceb%2fiphone_14_pro_finish_select_202209_6_1inch_deeppurple_PhotoRoom-_1_.png&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.1343705ccd53d5c1cecbf1aebef16650%3frik%3dCwwEsTv5vMyjyw%26pid%3dImgRaw%26r%3d0&exph=1000&expw=807&q=%d0%ba%d0%b0%d1%82%d1%80%d0%b8%d0%bd%d0%ba%d0%b8+%d1%81%d0%bc%d0%b0%d1%80%d1%82%d1%84%d0%be%d0%bd%d0%be%d0%b2&simid=608015229464811059&FORM=IRPRST&ck=10AA31067A94D9B99DCBDC81EABFBFE0&selectedIndex=0&itb=1",
+            "https://th.bing.com/th/id/OIP.fDfwSqJKbAudt0XKDkoGRAHaEK?w=283&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7",
             "https://th.bing.com/th/id/OIP.oLTHiC-JNwQLrOyi8PsrLgHaEK?w=274&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7"
         ],
         "categories": ["Категория 1", "Категория 2"],
