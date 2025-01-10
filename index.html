@@ -134,6 +134,47 @@
         .popup .play-button i {
             font-size: 24px;
         }
+        .marketplace {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .marketplace h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .product {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .product img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+        .product-info {
+            flex: 1;
+        }
+        .product-info h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .product-info p {
+            font-size: 1em;
+            color: #777;
+        }
+        .product-info .price {
+            font-size: 1.2em;
+            color: #E1306C;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -161,6 +202,26 @@
     <div class="content">
         <h1>Добро пожаловать на наш сайт!</h1>
         <p>Здесь вы найдете полезную информацию и ссылки на наши социальные сети. Подписывайтесь и следите за новостями!</p>
+    </div>
+    <div class="marketplace">
+        <h2>Наш маркетплейс</h2>
+        <div class="product">
+            <img src="https://via.placeholder.com/100" alt="Product 1">
+            <div class="product-info">
+                <h3>Product 1</h3>
+                <p>Описание товара 1.</p>
+                <p class="price">$19.99</p>
+            </div>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/100" alt="Product 2">
+            <div class="product-info">
+                <h3>Product 2</h3>
+                <p>Описание товара 2.</p>
+                <p class="price">$29.99</p>
+            </div>
+        </div>
+        <!-- Добавьте больше товаров по аналогии -->
     </div>
     <div class="popup" id="popup">
         <a href="https://apps.apple.com/us/app/garena-free-fire-the-cobra/id1300146617?referrer=utm_source%3D7179520584" class="play-button ios-button" id="ios-button">
