@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -145,6 +145,24 @@
             font-size: 1.5em;
             margin-bottom: 20px;
         }
+        .filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .filters button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 0 10px;
+        }
+        .filters button:hover {
+            background-color: #0056b3;
+        }
         .product {
             display: flex;
             flex-direction: column;
@@ -154,6 +172,11 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         .product img {
             width: 100%;
@@ -289,6 +312,7 @@
             color: white;
             padding: 10px 0;
             text-align: center;
+            z-index: 1000;
         }
         .navbar a {
             color: white;
@@ -298,6 +322,63 @@
         }
         .navbar a:hover {
             color: #007BFF;
+        }
+        .cart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .cart:hover {
+            background-color: #0056b3;
+        }
+        .cart i {
+            font-size: 24px;
+        }
+        .cart-popup {
+            display: none;
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            z-index: 1000;
+        }
+        .cart-popup.show {
+            display: block;
+        }
+        .cart-popup h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .cart-popup p {
+            font-size: 1em;
+            color: #777;
+        }
+        .cart-popup .cart-item {
+            margin-bottom: 10px;
+        }
+        .cart-popup .cart-item h4 {
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+        .cart-popup .cart-item p {
+            font-size: 0.9em;
+            color: #777;
         }
         @media (max-width: 768px) {
             .header {
@@ -321,6 +402,13 @@
             }
             .marketplace, .newsletter, .reviews, .contact {
                 padding: 10px;
+            }
+            .filters {
+                flex-direction: column;
+                align-items: center;
+            }
+            .filters button {
+                margin: 5px 0;
             }
         }
     </style>
@@ -360,30 +448,35 @@
     </div>
     <div class="marketplace" id="marketplace">
         <h2>Наш маркетплейс</h2>
-        <div class="product">
+        <div class="filters">
+            <button onclick="filterProducts('all')">Все</button>
+            <button onclick="filterProducts('category1')">Категория 1</button>
+            <button onclick="filterProducts('category2')">Категория 2</button>
+        </div>
+        <div class="product category1">
             <img src="https://via.placeholder.com/150" alt="Product 1">
             <div class="product-info">
                 <h3>Product 1</h3>
                 <p>Описание товара 1.</p>
                 <p class="price">$19.99</p>
-                <button class="add-to-cart">Добавить в корзину</button>
+                <button class="add-to-cart" onclick="addToCart('Product 1', 19.99)">Добавить в корзину</button>
             </div>
         </div>
-        <div class="product">
+        <div class="product category2">
             <img src="https://via.placeholder.com/150" alt="Product 2">
             <div class="product-info">
                 <h3>Product 2</h3>
                 <p>Описание товара 2.</p>
                 <p class="price">$29.99</p>
-                <button class="add-to-cart">Добавить в корзину</button>
+                <button class="add-to-cart" onclick="addToCart('Product 2', 29.99)">Добавить в корзину</button>
             </div>
         </div>
         <!-- Добавьте больше товаров по аналогии -->
     </div>
     <div class="newsletter" id="newsletter">
         <h2>Подпишитесь на нашу рассылку</h2>
-        <input type="email" placeholder="Введите ваш email">
-        <button>Подписаться</button>
+        <input type="email" placeholder="Введите ваш email" id="newsletter-email">
+        <button onclick="subscribeNewsletter()">Подписаться</button>
     </div>
     <div class="reviews" id="reviews">
         <h2>Отзывы наших клиентов</h2>
@@ -399,12 +492,20 @@
     </div>
     <div class="contact" id="contact">
         <h2>Свяжитесь с нами</h2>
-        <form>
-            <input type="text" placeholder="Ваше имя">
-            <input type="email" placeholder="Ваш email">
-            <textarea placeholder="Ваше сообщение"></textarea>
+        <form onsubmit="return validateContactForm()">
+            <input type="text" placeholder="Ваше имя" id="contact-name" required>
+            <input type="email" placeholder="Ваш email" id="contact-email" required>
+            <textarea placeholder="Ваше сообщение" id="contact-message" required></textarea>
             <button type="submit">Отправить</button>
         </form>
+    </div>
+    <a href="#" class="cart" id="cart-button">
+        <i class="fas fa-shopping-cart"></i>
+    </a>
+    <div class="cart-popup" id="cart-popup">
+        <h3>Ваша корзина</h3>
+        <div id="cart-items"></div>
+        <p id="cart-total">Общая сумма: $0.00</p>
     </div>
     <div class="popup" id="popup">
         <a href="https://apps.apple.com/us/app/garena-free-fire-the-cobra/id1300146617?referrer=utm_source%3D7179520584" class="play-button ios-button" id="ios-button">
@@ -426,13 +527,67 @@
             document.getElementById('popup').classList.add('show');
         });
 
-        // Функция для добавления товара в корзину
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', function() {
-                const productName = this.parentElement.querySelector('h3').innerText;
-                alert(`${productName} добавлен в корзину!`);
-            });
+        document.getElementById('cart-button').addEventListener('click', function() {
+            document.getElementById('cart-popup').classList.toggle('show');
         });
+
+        let cart = [];
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            cartItems.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `<h4>${item.name}</h4><p>$${item.price.toFixed(2)}</p>`;
+                cartItems.appendChild(cartItem);
+                total += item.price;
+            });
+
+            cartTotal.innerText = `Общая сумма: $${total.toFixed(2)}`;
+        }
+
+        function filterProducts(category) {
+            const products = document.querySelectorAll('.product');
+            products.forEach(product => {
+                if (category === 'all' || product.classList.contains(category)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        function subscribeNewsletter() {
+            const email = document.getElementById('newsletter-email').value;
+            if (email) {
+                alert(`Спасибо за подписку, ${email}!`);
+            } else {
+                alert('Пожалуйста, введите ваш email.');
+            }
+        }
+
+        function validateContactForm() {
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('contact-message').value;
+
+            if (name && email && message) {
+                alert(`Спасибо за ваше сообщение, ${name}!`);
+                return true;
+            } else {
+                alert('Пожалуйста, заполните все поля.');
+                return false;
+            }
+        }
     </script>
 </body>
 </html>
