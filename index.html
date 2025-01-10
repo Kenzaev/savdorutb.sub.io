@@ -677,10 +677,10 @@
         }
 
         // Функция для отображения всех товаров
-        function displayProducts() {
+        function displayProducts(filteredProducts = products) {
             const productsDiv = document.getElementById("product-gallery");
             productsDiv.innerHTML = '';
-            products.forEach((product, index) => {
+            filteredProducts.forEach((product, index) => {
                 const productDiv = document.createElement("div");
                 productDiv.className = "product-card";
                 productDiv.innerHTML = `
@@ -702,7 +702,7 @@
             const recommendedDiv = document.getElementById("recommended-products");
             recommendedDiv.innerHTML = '';
             const recommendedProducts = products.filter(product => product.isRecommended);
-            recommendedProducts.forEach(product => {
+            recommendedProducts.forEach((product, index) => {
                 const productDiv = document.createElement("div");
                 productDiv.className = "product-card";
                 productDiv.innerHTML = `
