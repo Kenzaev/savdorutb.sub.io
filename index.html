@@ -175,10 +175,126 @@
             font-size: 1.2em;
             color: #E1306C;
         }
+        .newsletter {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .newsletter h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .newsletter input[type="email"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .newsletter button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .newsletter button:hover {
+            background-color: #0056b3;
+        }
+        .reviews {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .reviews h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .review {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .review h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .review p {
+            font-size: 1em;
+            color: #777;
+        }
+        .contact {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact form input, .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact form button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact form button:hover {
+            background-color: #0056b3;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #007BFF;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <div class="navbar">
+        <a href="#welcome">Главная</a>
+        <a href="#marketplace">Маркетплейс</a>
+        <a href="#newsletter">Рассылка</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contact">Контакты</a>
+    </div>
     <a href="#" class="theme-toggle" id="theme-toggle">
         <i class="fas fa-sun"></i>
     </a>
@@ -199,11 +315,11 @@
             <i class="fab fa-telegram"></i>
         </a>
     </div>
-    <div class="content">
+    <div class="content" id="welcome">
         <h1>Добро пожаловать на наш сайт!</h1>
         <p>Здесь вы найдете полезную информацию и ссылки на наши социальные сети. Подписывайтесь и следите за новостями!</p>
     </div>
-    <div class="marketplace">
+    <div class="marketplace" id="marketplace">
         <h2>Наш маркетплейс</h2>
         <div class="product">
             <img src="https://via.placeholder.com/100" alt="Product 1">
@@ -222,6 +338,32 @@
             </div>
         </div>
         <!-- Добавьте больше товаров по аналогии -->
+    </div>
+    <div class="newsletter" id="newsletter">
+        <h2>Подпишитесь на нашу рассылку</h2>
+        <input type="email" placeholder="Введите ваш email">
+        <button>Подписаться</button>
+    </div>
+    <div class="reviews" id="reviews">
+        <h2>Отзывы наших клиентов</h2>
+        <div class="review">
+            <h3>Клиент 1</h3>
+            <p>Отличный сервис и качественные товары!</p>
+        </div>
+        <div class="review">
+            <h3>Клиент 2</h3>
+            <p>Быстрая доставка и удобный интерфейс сайта.</p>
+        </div>
+        <!-- Добавьте больше отзывов по аналогии -->
+    </div>
+    <div class="contact" id="contact">
+        <h2>Свяжитесь с нами</h2>
+        <form>
+            <input type="text" placeholder="Ваше имя">
+            <input type="email" placeholder="Ваш email">
+            <textarea placeholder="Ваше сообщение"></textarea>
+            <button type="submit">Отправить</button>
+        </form>
     </div>
     <div class="popup" id="popup">
         <a href="https://apps.apple.com/us/app/garena-free-fire-the-cobra/id1300146617?referrer=utm_source%3D7179520584" class="play-button ios-button" id="ios-button">
