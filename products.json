@@ -1,36 +1,17 @@
 {
-    "products": [
-        {
-            "name": "Смартфон XYZ",
-            "price": 29999,
-            "isRecommended": true,
-            "images": [
-                "https://example.com/image1.jpg",
-                "https://example.com/image2.jpg",
-                "https://example.com/image3.jpg"
-            ],
-            "video": "https://example.com/video.mp4",
-            "category": "Электроника",
-            "reviews": [
-                "Отличный смартфон!",
-                "Камера просто супер!",
-                "Батарея держит целый день."
-            ]
-        },
-        {
-            "name": "Ноутбук ABC",
-            "price": 59999,
-            "isRecommended": false,
-            "images": [
-                "https://example.com/image4.jpg",
-                "https://example.com/image5.jpg"
-            ],
-            "video": "https://example.com/video2.mp4",
-            "category": "Компьютеры",
-            "reviews": [
-                "Отличный ноутбук для работы.",
-                "Быстрый и мощный."
-            ]
-        }
+    "name": "Смартфон XYZ",
+    "price": 29999,
+    "isRecommended": true,
+    "images": [
+        "https://www.bing.com/ck/a?!&&p=49dc08759cff3e3c9b025796c032813fc0505bf5db08d8258b8bf296816be2d1JmltdHM9MTczNjQ2NzIwMA&ptn=3&ver=2&hsh=4&fclid=1c956981-7f5f-6d0a-1b7b-7cb27e086c8c&u=a1L2ltYWdlcy9zZWFyY2g_cT0lRDAlQkElRDAlQjAlRDElODAlRDElODIlRDAlQjglRDAlQkQlRDAlQkElRDAlQjgmRk9STT1JUUZSQkEmaWQ9MkI0OEFENTJGMkVCN0FFMjlFQUQ0M0YzMzA0MDNCMzM5N0FCRjNCRA&ntb=1",
+        "https://www.bing.com/ck/a?!&&p=c767d46d4d5ddcf633771c495aed492d83adc98ff0f58a422f66e02e54c924e3JmltdHM9MTczNjQ2NzIwMA&ptn=3&ver=2&hsh=4&fclid=1c956981-7f5f-6d0a-1b7b-7cb27e086c8c&u=a1L2ltYWdlcy9zZWFyY2g_cT0lRDAlQkElRDAlQjAlRDElODAlRDElODIlRDAlQjglRDAlQkQlRDAlQkElRDAlQjgmRk9STT1JUUZSQkEmaWQ9QjRGOEU5Q0QzOUY5QjFBNzAzMkE2MEY2NzIxQTc4MDU4RTVERTExMA&ntb=1",
+        "https://www.bing.com/ck/a?!&&p=af8e6682fbb209a8c322a4e8495ceaa84d6352042b3fc22da4a26700b5086138JmltdHM9MTczNjQ2NzIwMA&ptn=3&ver=2&hsh=4&fclid=1c956981-7f5f-6d0a-1b7b-7cb27e086c8c&u=a1L2ltYWdlcy9zZWFyY2g_cT0lRDAlQkElRDAlQjAlRDElODAlRDElODIlRDAlQjglRDAlQkQlRDAlQkElRDAlQjgmRk9STT1JUUZSQkEmaWQ9Q0UyMkZERjBGRkYwMEJGQUI0NUQ0QTlBNjkzNUI2QjFGNjkzRDNEOQ&ntb=1"
+    ],
+    "video": "https://example.com/video.mp4",
+    "category": "Электроника",
+    "reviews": [
+        "Отличный смартфон!",
+        "Камера просто супер!",
+        "Батарея держит целый день."
     ]
 }
