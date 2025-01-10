@@ -673,8 +673,8 @@
                 "price": 200,
                 "video": "https://www.youtube.com/watch?v=example",
                 "images": [
-                    "https://th.bing.com/th?id=OIP.D84dL0kVexfzhull3Hjn9wHaFY&w=293&h=213&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-                    "https://th.bing.com/th?q=%d0%9a%d1%80%d0%b0%d1%81%d0%b8%d0%b2%d1%8b%d0%b5+%d0%97%d0%b8%d0%bc%d0%bd%d0%b8%d0%b5+%d0%9a%d0%b0%d1%80%d1%82%d0%b8%d0%bd%d0%ba%d0%b8&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.1&pid=InlineBlock&mkt=ru-RU&cc=RU&setlang=ru&adlt=moderate&t=1&mw=247"
+                    "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
+                    "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
                 ],
                 "categories": ["Категория 1", "Категория 2"],
                 "isRecommended": false
@@ -1002,7 +1002,7 @@
                 const img = document.createElement('img');
                 img.src = image;
                 img.alt = currentProduct.name;
-                if (image === currentProduct.images[0]) {
+                if (image === currentProduct.images[currentImageIndex]) {
                     img.classList.add('active');
                 }
                 modalProductImages.appendChild(img);
