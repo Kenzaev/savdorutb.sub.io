@@ -1,222 +1,36 @@
-[
-    {
-        "name": "Товар 1",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 2",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 3",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 4",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 5",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 6",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 7",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 8",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 9",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 10",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 11",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 12",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 13",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 14",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 15",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 16",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 17",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 18",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 19",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    },
-    {
-        "name": "Товар 20",
-        "price": 200,
-        "video": "https://www.youtube.com/watch?v=example",
-        "images": [
-            "https://th.bing.com/th?id=OIP.KAD5XFDT55jJqDgk1rX4zgHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2",
-            "https://th.bing.com/th?id=OIP.noDWI9cyDuNYpaRWriJqTAHaEb&w=323&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.1&pid=3.1&rm=2"
-        ],
-        "categories": ["Категория 1", "Категория 2"],
-        "isRecommended": false
-    }
-]
+{
+    "products": [
+        {
+            "name": "Смартфон XYZ",
+            "price": 29999,
+            "isRecommended": true,
+            "images": [
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg",
+                "https://example.com/image3.jpg"
+            ],
+            "video": "https://example.com/video.mp4",
+            "category": "Электроника",
+            "reviews": [
+                "Отличный смартфон!",
+                "Камера просто супер!",
+                "Батарея держит целый день."
+            ]
+        },
+        {
+            "name": "Ноутбук ABC",
+            "price": 59999,
+            "isRecommended": false,
+            "images": [
+                "https://example.com/image4.jpg",
+                "https://example.com/image5.jpg"
+            ],
+            "video": "https://example.com/video2.mp4",
+            "category": "Компьютеры",
+            "reviews": [
+                "Отличный ноутбук для работы.",
+                "Быстрый и мощный."
+            ]
+        }
+    ]
+}
