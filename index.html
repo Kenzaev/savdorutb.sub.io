@@ -945,16 +945,11 @@
 
         function updateModalImages() {
             const modalProductImages = document.getElementById("modalProductImages");
-            modalProductImages.innerHTML = '';
-            currentProduct.images.forEach((image, index) => {
-                const img = document.createElement('img');
-                img.src = image;
-                img.alt = currentProduct.name;
-                if (index === currentImageIndex) {
-                    img.classList.add('active');
-                }
-                modalProductImages.appendChild(img);
-            });
+            const imgs = modalProductImages.getElementsByTagName('img');
+            Array.from(imgs).forEach(img => img.classList.remove('active'));
+            if (imgs[currentImageIndex]) {
+                imgs[currentImageIndex].classList.add('active');
+            }
         }
 
         function updateImageCount() {
