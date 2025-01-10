@@ -825,21 +825,24 @@
 
             // Add swipe functionality
             const slider = document.getElementById("modalProductImages");
+            let touchStartX = 0;
+            let touchEndX = 0;
+
             slider.addEventListener('touchstart', (e) => {
-                startX = e.touches[0].clientX;
-                isSwiping = true;
+                touchStartX = e.touches[0].clientX;
             });
 
             slider.addEventListener('touchmove', (e) => {
-                if (!isSwiping) return;
-                e.preventDefault();
-                const x = e.touches[0].clientX;
-                const walk = (x - startX) * 1; // Adjust the multiplier for sensitivity
-                slider.scrollLeft = slider.scrollLeft - walk;
+                touchEndX = e.touches[0].clientX;
             });
 
             slider.addEventListener('touchend', () => {
-                isSwiping = false;
+                if (touchStartX - touchEndX > 50) {
+                    nextImage();
+                }
+                if (touchStartX - touchEndX < -50) {
+                    prevImage();
+                }
             });
 
             // Add click event to open fullscreen
@@ -1013,21 +1016,24 @@
 
             // Add swipe functionality
             const slider = document.getElementById("fullscreenImages");
+            let touchStartX = 0;
+            let touchEndX = 0;
+
             slider.addEventListener('touchstart', (e) => {
-                startX = e.touches[0].clientX;
-                isSwiping = true;
+                touchStartX = e.touches[0].clientX;
             });
 
             slider.addEventListener('touchmove', (e) => {
-                if (!isSwiping) return;
-                e.preventDefault();
-                const x = e.touches[0].clientX;
-                const walk = (x - startX) * 1; // Adjust the multiplier for sensitivity
-                slider.scrollLeft = slider.scrollLeft - walk;
+                touchEndX = e.touches[0].clientX;
             });
 
             slider.addEventListener('touchend', () => {
-                isSwiping = false;
+                if (touchStartX - touchEndX > 50) {
+                    nextImage();
+                }
+                if (touchStartX - touchEndX < -50) {
+                    prevImage();
+                }
             });
         }
 
