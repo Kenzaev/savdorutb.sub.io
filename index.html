@@ -380,6 +380,43 @@
             overflow: hidden;
         }
 
+        /* Полноэкранный режим */
+        .fullscreen {
+            display: none;
+            position: fixed;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: hidden;
+        }
+
+        .fullscreen img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fullscreen img.active {
+            opacity: 1;
+        }
+
+        .fullscreen .close-fullscreen {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #ffffff;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
         /* Чаты */
         .chat-container {
             display: none;
@@ -643,6 +680,11 @@
             <button class="btn" onclick="openTelegramChat()">Открыть чат в Telegram</button>
         </div>
     </div>
+    <!-- Полноэкранный режим -->
+    <div id="fullscreen" class="fullscreen">
+        <span class="close-fullscreen" onclick="closeFullscreen()">&times;</span>
+        <div id="fullscreenImages" class="fullscreen-images"></div>
+    </div>
     <!-- Чаты -->
     <div id="chatContainer" class="chat-container">
         <div class="chat-header">
@@ -778,6 +820,39 @@
             document.getElementById("modalProductQuantity").innerText = currentQuantity;
             document.getElementById("productModal").style.display = "block";
             loadReviewsInModal(currentProduct.name);
+
+            // Add swipe functionality
+            const slider = document.getElementById("modalProductImages");
+            let startX, isSwiping = false;
+
+            slider.addEventListener('mousedown', (e) => {
+                isSwiping = true;
+                startX = e.pageX - slider.offsetLeft;
+                slider.style.cursor = 'grabbing';
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isSwiping = false;
+                slider.style.cursor = 'default';
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isSwiping = false;
+                slider.style.cursor = 'default';
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isSwiping) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 1; // Adjust the multiplier for sensitivity
+                slider.scrollLeft = slider.scrollLeft - walk;
+            });
+
+            // Add click event to open fullscreen
+            modalProductImages.querySelectorAll('img').forEach(img => {
+                img.addEventListener('click', () => openFullscreen(currentProduct.images, currentImageIndex));
+            });
         }
 
         function closeModal() {
@@ -904,9 +979,19 @@
         function nextImage() {
             const images = currentProduct.images;
             currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateModalImages();
+        }
+
+        function prevImage() {
+            const images = currentProduct.images;
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateModalImages();
+        }
+
+        function updateModalImages() {
             const modalProductImages = document.getElementById("modalProductImages");
             modalProductImages.innerHTML = '';
-            images.forEach((image, index) => {
+            currentProduct.images.forEach((image, index) => {
                 const img = document.createElement('img');
                 img.src = image;
                 img.alt = currentProduct.name;
@@ -917,11 +1002,11 @@
             });
         }
 
-        function prevImage() {
-            const images = currentProduct.images;
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            const modalProductImages = document.getElementById("modalProductImages");
-            modalProductImages.innerHTML = '';
+        // Функции для полноэкранного режима
+        function openFullscreen(images, startIndex) {
+            currentImageIndex = startIndex;
+            const fullscreenImages = document.getElementById("fullscreenImages");
+            fullscreenImages.innerHTML = '';
             images.forEach((image, index) => {
                 const img = document.createElement('img');
                 img.src = image;
@@ -929,8 +1014,41 @@
                 if (index === currentImageIndex) {
                     img.classList.add('active');
                 }
-                modalProductImages.appendChild(img);
+                fullscreenImages.appendChild(img);
             });
+            document.getElementById("fullscreen").style.display = "block";
+
+            // Add swipe functionality
+            const slider = document.getElementById("fullscreenImages");
+            let startX, isSwiping = false;
+
+            slider.addEventListener('mousedown', (e) => {
+                isSwiping = true;
+                startX = e.pageX - slider.offsetLeft;
+                slider.style.cursor = 'grabbing';
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isSwiping = false;
+                slider.style.cursor = 'default';
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isSwiping = false;
+                slider.style.cursor = 'default';
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isSwiping) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 1; // Adjust the multiplier for sensitivity
+                slider.scrollLeft = slider.scrollLeft - walk;
+            });
+        }
+
+        function closeFullscreen() {
+            document.getElementById("fullscreen").style.display = "none";
         }
 
         // Функции для работы с чатом
