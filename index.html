@@ -576,7 +576,7 @@
 <body>
     <header>
         <h1>Добро пожаловать в интернет-магазин</h1>
-        <input type="text" id="search-bar" placeholder="Поиск..." oninput="filterProducts()" style="padding: 0.5em; width: 80%; max-width: 300px; border-radius: 5px; border: 1px solid #ccc;">
+        <input type="text" id="search-bar" placeholder="Поиск..." oninput="filterProducts()" style="padding: 0.5em; width: 60%; max-width: 200px; border-radius: 5px; border: 1px solid #ccc;">
         <button class="menu-button" onclick="toggleMenu()">Меню</button>
         <div class="menu-panel" id="menu-panel">
             <button class="btn" onclick="showMain()">Главная</button>
@@ -597,20 +597,17 @@
         <section class="gallery" id="product-gallery">
             <!-- Продукты будут добавлены здесь через JavaScript -->
         </section>
-
         <section class="recommended" id="recommended-gallery" style="display: none;">
             <h2>Рекомендуемые товары</h2>
             <div class="gallery" id="recommended-products">
                 <!-- Рекомендуемые продукты будут добавлены здесь через JavaScript -->
             </div>
         </section>
-
         <section class="cart" id="cart-section" style="display: none;">
             <h2>Корзина</h2>
             <div id="cart-items"></div>
             <button class="btn" onclick="checkout()">Оформить заказ</button>
         </section>
-
         <div class="admin-panel" id="admin-panel">
             <h2>Админ-панель</h2>
             <input type="text" id="product-name" placeholder="Название товара">
@@ -624,7 +621,6 @@
             <button class="btn" onclick="addProduct()">Добавить товар</button>
         </div>
     </main>
-
     <!-- Модальное окно -->
     <div id="productModal" class="modal">
         <div class="modal-content">
@@ -647,7 +643,6 @@
             <button class="btn" onclick="openTelegramChat()">Открыть чат в Telegram</button>
         </div>
     </div>
-
     <!-- Чаты -->
     <div id="chatContainer" class="chat-container">
         <div class="chat-header">
@@ -657,7 +652,6 @@
         <div class="chat-messages" id="chatMessages"></div>
         <input type="text" id="chatInput" class="chat-input" placeholder="Напишите сообщение..." onkeypress="sendMessage(event)">
     </div>
-
     <script>
         let products = [];
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
