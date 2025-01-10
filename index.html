@@ -1,48 +1,6 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Интернет-магазин</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <a href="#" class="theme-toggle" id="theme-toggle">
-        <i class="fas fa-sun"></i>
-    </a>
-    <header>
-        <h1>Добро пожаловать в интернет-магазин</h1>
-        <button class="menu-button" id="menu-button">Меню</button>
-        <div class="menu-panel" id="menu-panel">
-            <a href="https://www.instagram.com/your_instagram_username" class="social-button instagram-button">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://vk.com/your_vk_username" class="social-button vk-button">
-                <i class="fab fa-vk"></i>
-            </a>
-            <a href="https://www.youtube.com/your_youtube_channel" class="social-button youtube-button">
-                <i class="fab fa-youtube"></i>
-            </a>
-            <a href="https://t.me/your_telegram_channel" class="social-button telegram-button">
-                <i class="fab fa-telegram"></i>
-            </a>
-        </div>
-    </header>
-    <main>
-        <section class="gallery" id="product-gallery">
-            <!-- Продукты будут добавлены здесь через JavaScript -->
-        </section>
-    </main>
-    <a href="#" class="cart" id="cart-button">
-        <i class="fas fa-shopping-cart"></i>
-    </a>
-    <div class="cart-popup" id="cart-popup">
-        <h3>Ваша корзина</h3>
-        <div id="cart-items"></div>
-        <p id="cart-total">Общая сумма: $0.00</p>
-    </div>
-    <script src="js/scripts.js"></script>
-</body>
-</html>
+<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Подписка на наши социальные сети</title> <style> body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; transition: background-color 0.3s, color 0.3s; } .header { position: fixed; top: 20px; right: 20px; display: flex; flex-direction: column; align-items: flex-end; } .social-button { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; color: white; text-decoration: none; transition: transform 0.2s; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); } .social-button\:hover { transform: scale(1.1); } .instagram-button { background-color: #E1306C; } .vk-button { background-color: #4C75A3; } .youtube-button { background-color: #FF0000; } .telegram-button { background-color: #0088cc; } .home-button { background-color: #007BFF; } .social-button i { font-size: 24px; } .content { text-align: center; margin-top: 100px; padding: 20px; } .content h1 { font-size: 2em; margin-bottom: 20px; } .content p { font-size: 1em; line-height: 1.6; } .theme-toggle { position: fixed; top: 20px; left: 20px; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: #333; color: white; text-decoration: none; transition: background-color 0.3s; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); } .theme-toggle\:hover { background-color: #555; } .theme-toggle i { font-size: 24px; } .dark-mode { background-color: #333; color: #f4f4f4; } .popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); text-align: center; } .popup.show { display: block; } .popup .play-button { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 10px; color: white; text-decoration: none; transition: transform 0.2s; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); } .popup .play-button\:hover { transform: scale(1.1); } .ios-button { background-color: #007AFF; } .android-button { background-color: #3DDC84; } .popup .play-button i { font-size: 24px; } </style> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> </head> <body> <a href="#" class="theme-toggle" id="theme-toggle"> <i class="fas fa-sun"></i> </a> <div class="header"> <a href="#" class="social-button home-button" id="home-button"> <i class="fas fa-home"></i> </a> <a href="https://www.instagram.com/your_instagram_username" class="social-button instagram-button"> <i class="fab fa-instagram"></i> </a> <a href="https://vk.com/your_vk_username" class="social-button vk-button"> <i class="fab fa-vk"></i> </a> <a href="https://www.youtube.com/your_youtube_channel" class="social-button youtube-button"> <i class="fab fa-youtube"></i> </a> <a href="https://t.me/your_telegram_channel" class="social-button telegram-button"> <i class="fab fa-telegram"></i> </a> </div> <div class="content"> <h1>Добро пожаловать на наш сайт!</h1> <p>Здесь вы найдете полезную информацию и ссылки на наши социальные сети. Подписывайтесь и следите за новостями!</p> </div> <div class="popup" id="popup"> <a href="https://apps.apple.com/us/app/garena-free-fire-the-cobra/id1300146617?referrer=utm_source%3D7179520584" class="play-button ios-button" id="ios-button"> <i class="fab fa-apple"></i> </a> <a href="https://play.google.com/store/apps/details?id=com.dts.freefiremax&referrer=utm_source%3D7179520584" class="play-button android-button" id="android-button"> <i class="fab fa-android"></i> </a> </div> <script> document.getElementById('theme-toggle').addEventListener('click', function() { document.body.classList.toggle('dark-mode'); const icon = this.querySelector('i'); icon.classList.toggle('fa-sun'); icon.classList.toggle('fa-moon'); });
+
+document.getElementById('home-button').addEventListener('click', function() {
+        document.getElementById('popup').classList.add('show');
+    });
+</script>
