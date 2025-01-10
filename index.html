@@ -702,6 +702,8 @@
         let isAdmin = false;
         let currentImageIndex = 0;
         let chatMessages = [];
+        let startX = 0;
+        let isSwiping = false;
 
         // Функция для загрузки товаров из products.json
         async function loadProducts() {
@@ -823,30 +825,21 @@
 
             // Add swipe functionality
             const slider = document.getElementById("modalProductImages");
-            let startX, isSwiping = false;
-
-            slider.addEventListener('mousedown', (e) => {
+            slider.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
                 isSwiping = true;
-                startX = e.pageX - slider.offsetLeft;
-                slider.style.cursor = 'grabbing';
             });
 
-            slider.addEventListener('mouseleave', () => {
-                isSwiping = false;
-                slider.style.cursor = 'default';
-            });
-
-            slider.addEventListener('mouseup', () => {
-                isSwiping = false;
-                slider.style.cursor = 'default';
-            });
-
-            slider.addEventListener('mousemove', (e) => {
+            slider.addEventListener('touchmove', (e) => {
                 if (!isSwiping) return;
                 e.preventDefault();
-                const x = e.pageX - slider.offsetLeft;
+                const x = e.touches[0].clientX;
                 const walk = (x - startX) * 1; // Adjust the multiplier for sensitivity
                 slider.scrollLeft = slider.scrollLeft - walk;
+            });
+
+            slider.addEventListener('touchend', () => {
+                isSwiping = false;
             });
 
             // Add click event to open fullscreen
@@ -1020,30 +1013,21 @@
 
             // Add swipe functionality
             const slider = document.getElementById("fullscreenImages");
-            let startX, isSwiping = false;
-
-            slider.addEventListener('mousedown', (e) => {
+            slider.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
                 isSwiping = true;
-                startX = e.pageX - slider.offsetLeft;
-                slider.style.cursor = 'grabbing';
             });
 
-            slider.addEventListener('mouseleave', () => {
-                isSwiping = false;
-                slider.style.cursor = 'default';
-            });
-
-            slider.addEventListener('mouseup', () => {
-                isSwiping = false;
-                slider.style.cursor = 'default';
-            });
-
-            slider.addEventListener('mousemove', (e) => {
+            slider.addEventListener('touchmove', (e) => {
                 if (!isSwiping) return;
                 e.preventDefault();
-                const x = e.pageX - slider.offsetLeft;
+                const x = e.touches[0].clientX;
                 const walk = (x - startX) * 1; // Adjust the multiplier for sensitivity
                 slider.scrollLeft = slider.scrollLeft - walk;
+            });
+
+            slider.addEventListener('touchend', () => {
+                isSwiping = false;
             });
         }
 
