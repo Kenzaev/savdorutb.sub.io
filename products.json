@@ -52,7 +52,7 @@
         "price": 200,
         "video": "https://www.youtube.com/watch?v=example",
         "images": [
-           "https://i.postimg.cc/SKsntyrJ/IMG-1983.jpg"
+           ""
         ],
         "categories": ["Категория 1", "Категория 2"],
         "isRecommended": false
