@@ -4,8 +4,7 @@
         "price": 60000,
         "video": "https://www.youtube.com/watch?v=example",
         "images": [
-            "",
-            "https://th.bing.com/th/id/OIP.fDfwSqJKbAudt0XKDkoGRAHaEK?w=283&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7",
+            
             "https://th.bing.com/th/id/OIP.OEIjoUE8mlK-aPaHkKJqEAHaHa?w=174&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7"
         ],
         "categories": ["Категория 1", "Категория 2"],
