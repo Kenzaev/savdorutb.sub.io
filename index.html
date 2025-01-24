@@ -704,10 +704,10 @@
                     <img src="${product.images[0]}" alt="${product.name}" onclick="openModal(${index})">
                     <p>Цена: ${product.price}₽</p>
                     <button class="btn" onclick="orderNow('${product.name}')">Заказать</button>
-                    <button class="btn" onclick="addToCart('${product.name}', ${product.price})">В корзинуи 🛒</button>
+                    <button class="btn" onclick="addToCart('${product.name}', ${product.price})">В корзину 🛒</button>
                     <button class="btn" onclick="viewVideo('${product.video}')">Обзор 🎬</button>
                     ${isAdmin ? `<button class="btn" onclick="deleteProduct(${index})">Удалить</button>` : ''}
-                    <button class="btn" onclick="openTelegramChat()">Отзывы 💬</button>
+                    <button class="btn" onclick="openTelegramChat()">Отзывы💬</button>
                 `;
                 productsDiv.appendChild(productDiv);
             });
