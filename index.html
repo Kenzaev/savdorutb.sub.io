@@ -587,12 +587,12 @@
 <body>
     <header>
         <h1>Добро пожаловать в интернет-магазин Shaxa</h1>
-        <input type="text" id="search-bar" placeholder="Поиск..." oninput="filterProducts()" style="padding: 0.5em; width: 60%; max-width: 200px; border-radius: 5px; border: 1px solid #ccc;">
+        <input type="text" id="search-bar" placeholder="🔍Поиск..." oninput="filterProducts()" style="padding: 0.5em; width: 60%; max-width: 200px; border-radius: 5px; border: 1px solid #ccc;">
         <button class="menu-button" onclick="toggleMenu()">Меню</button>
         <div class="menu-panel" id="menu-panel">
-            <button class="btn" onclick="showMain()">Главная</button>
-            <button class="btn" onclick="showRecommended()">Рекомендуемые товары</button>
-            <button class="btn" onclick="showCartSection()">Корзина🛒</button>
+            <button class="btn" onclick="showMain()">Главная 📌</button>
+            <button class="btn" onclick="showRecommended()">Рекомендуемые товары 😊</button>
+            <button class="btn" onclick="showCartSection()">Корзина 🛒</button>
         </div>
         <div class="social-media">
             <a href="https://www.facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
@@ -602,7 +602,7 @@
             <a href="https://vk.com/id756665575" target="_blank" class="vk"><i class="fab fa-vk"></i></a>
             <a href="https://youtube.com/channel/UCbKThWSdaYNLMaPmdK4XyyA?si=cmyDMGcOSjckE7cw" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
         </div>
-        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        <button class="theme-toggle" onclick="toggleTheme()"></button>
     </header>
     <main>
         <section class="gallery" id="product-gallery">
@@ -627,9 +627,9 @@
             <input type="text" id="product-images" placeholder="Ссылки на изображения (через запятую)">
             <input type="text" id="product-category" placeholder="Категория">
             <label>
-                <input type="checkbox" id="is-recommended"> Рекомендуемый товар
+                <input type="checkbox" id="is-recommended"> Рекомендуемый товар 😊
             </label>
-            <button class="btn" onclick="addProduct()">Добавить товар</button>
+            <button class="btn" onclick="addProduct()">Добавить товар </button>
         </div>
     </main>
     <!-- Модальное окно -->
@@ -645,7 +645,7 @@
                 <span id="modalProductQuantity">1</span>
                 <button class="btn" onclick="increaseQuantity()">+</button>
             </div>
-            <button class="btn" onclick="addToCartFromModal()">Добавить в корзину</button>
+            <button class="btn" onclick="addToCartFromModal()">в карзину 🛒</button>
             <h3>Отзывы:</h3>
             <div id="modalProductReviews"></div>
             <button class="btn" onclick="openTelegramChat()">Открыть чат</button>
@@ -703,11 +703,11 @@
                     <h2>${product.name}</h2>
                     <img src="${product.images[0]}" alt="${product.name}" onclick="openModal(${index})">
                     <p>Цена: ${product.price}₽</p>
-                    <button class="btn" onclick="orderNow('${product.name}')">Заказать сейчас</button>
-                    <button class="btn" onclick="addToCart('${product.name}', ${product.price})">В корзину</button>
-                    <button class="btn" onclick="viewVideo('${product.video}')">Обзор</button>
+                    <button class="btn" onclick="orderNow('${product.name}')">Заказать</button>
+                    <button class="btn" onclick="addToCart('${product.name}', ${product.price})">В корзинуи 🛒</button>
+                    <button class="btn" onclick="viewVideo('${product.video}')">Обзор 🎬</button>
                     ${isAdmin ? `<button class="btn" onclick="deleteProduct(${index})">Удалить</button>` : ''}
-                    <button class="btn" onclick="openTelegramChat()">Отзывы</button>
+                    <button class="btn" onclick="openTelegramChat()">Отзывы 💬</button>
                 `;
                 productsDiv.appendChild(productDiv);
             });
@@ -725,9 +725,9 @@
                     <h2>${product.name}</h2>
                     <img src="${product.images[0]}" alt="${product.name}" onclick="openModal(${index})">
                     <p>Цена: ${product.price}₽</p>
-                    <button class="btn" onclick="orderNow('${product.name}')">Заказать сейчас</button>
-                    <button class="btn" onclick="addToCart('${product.name}', ${product.price})">В корзину</button>
-                    <button class="btn" onclick="viewVideo('${product.video}')">Обзор</button>
+                    <button class="btn" onclick="orderNow('${product.name}')">Заказать</button>
+                    <button class="btn" onclick="addToCart('${product.name}', ${product.price})">В корзину 🛒</button>
+                    <button class="btn" onclick="viewVideo('${product.video}')">Обзор 🎬</button>
                 `;
                 recommendedDiv.appendChild(productDiv);
             });
@@ -759,7 +759,7 @@
                 cart.push({ name, price, quantity });
             }
             localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${name} добавлен в корзину!`);
+            alert(`${name} добавлен в корзину 🛒!`);
             displayCart();
         }
 
