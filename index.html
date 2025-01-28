@@ -98,8 +98,9 @@
 
         .gallery {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
             width: 100%;
             max-width: 1200px;
         }
@@ -112,8 +113,8 @@
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
-            width: 100%;
-            max-width: 600px;
+            width: calc(50% - 20px);
+            max-width: 300px;
             margin-bottom: 20px;
             animation: fadeIn 1s ease-in-out;
         }
@@ -705,9 +706,7 @@
                     <p>Цена: ${product.price}₽</p>
                     <button class="btn" onclick="orderNow('${product.name}')">Заказать 🛍️</button>
                     <button class="btn" onclick="addToCart('${product.name}', ${product.price})">В корзину 🛒</button>
-                    <button class="btn" onclick="viewVideo('${product.video}')">Обзор 🎬</button>
                     ${isAdmin ? `<button class="btn" onclick="deleteProduct(${index})">Удалить</button>` : ''}
-                    <button class="btn" onclick="openTelegramChat()">  Отзывы🤩🌟</button>
                 `;
                 productsDiv.appendChild(productDiv);
             });
@@ -727,7 +726,6 @@
                     <p>Цена: ${product.price}₽</p>
                     <button class="btn" onclick="orderNow('${product.name}')">Заказать</button>
                     <button class="btn" onclick="addToCart('${product.name}', ${product.price})">В корзину 🛒</button>
-                    <button class="btn" onclick="viewVideo('${product.video}')">Обзор 🎬</button>
                 `;
                 recommendedDiv.appendChild(productDiv);
             });
@@ -768,10 +766,6 @@
                 addToCart(currentProduct.name, currentProduct.price, currentQuantity);
                 closeModal();
             }
-        }
-
-        function viewVideo(videoUrl) {
-            window.open(videoUrl, '_blank');
         }
 
         function openModal(index) {
@@ -889,42 +883,6 @@
                 reviewsDiv.innerHTML = productReviews.map(review => `<p>${review}</p>`).join('');
             } catch (error) {
                 console.error('Ошибка при загрузке отзывов:', error);
-            }
-        }
-
-        function openReviewsModal(index) {
-            currentProduct = products[index];
-            document.getElementById("modalProductName").innerText = currentProduct.name;
-            document.getElementById("productModal").style.display = "block";
-            loadReviewsInModal(currentProduct.name);
-        }
-
-        async function addReview() {
-            const reviewText = document.getElementById('review-text').value;
-            if (reviewText) {
-                try {
-                    const response = await fetch('pleys.json');
-                    const reviews = await response.json();
-                    const productName = currentProduct.name;
-                    if (!reviews[productName]) {
-                        reviews[productName] = [];
-                    }
-                    reviews[productName].push(reviewText);
-                    await fetch('pleys.json', {
-                        method: 'PUT',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(reviews)
-                    });
-                    loadReviewsInModal(productName);
-                    document.getElementById('review-text').value = '';
-                    alert('Отзыв добавлен!');
-                } catch (error) {
-                    console.error('Ошибка при добавлении отзыва:', error);
-                }
-            } else {
-                alert('Пожалуйста, введите отзыв');
             }
         }
 
