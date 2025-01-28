@@ -98,7 +98,7 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 20px;
             width: 100%;
             max-width: 1200px;
@@ -109,13 +109,14 @@
             background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 1.5em;
+            padding: 1em;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
+            height: 300px;
         }
 
         body.dark-mode .product-card {
@@ -130,7 +131,8 @@
 
         .product-card img {
             max-width: 100%;
-            height: auto;
+            height: 120px;
+            object-fit: cover;
             border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s;
@@ -142,12 +144,18 @@
         }
 
         .product-card h2 {
-            font-size: 1.2em;
+            font-size: 1em;
             margin-bottom: 0.5em;
         }
 
         .product-card p {
-            font-size: 1em;
+            font-size: 0.9em;
+            margin-bottom: 1em;
+        }
+
+        .product-card .price {
+            font-size: 1.2em;
+            color: #d2b48c;
             margin-bottom: 1em;
         }
 
@@ -156,10 +164,11 @@
             border: none;
             color: #ffffff;
             padding: 0.5em 1em;
-            margin: 0.5em;
+            margin: 0.2em;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
+            width: 100%;
         }
 
         .product-card button:hover {
@@ -302,6 +311,7 @@
 
             .product-card {
                 padding: 1em;
+                height: auto;
             }
 
             .cart {
@@ -705,7 +715,7 @@
                 productDiv.innerHTML = `
                     <img src="${product.images[0]}" alt="${product.name}" onclick="openModal(${index})">
                     <h2>${product.name}</h2>
-                    <p>Цена: ${product.price}₽</p>
+                    <p class="price">${product.price}₽</p>
                     <button class="btn" onclick="orderNow('${product.name}')">Заказать 🛍️</button>
                     <button class="btn" onclick="addToCart('${product.name}', ${product.price})">В корзину 🛒</button>
                     ${isAdmin ? `<button class="btn" onclick="deleteProduct(${index})">Удалить</button>` : ''}
@@ -725,7 +735,7 @@
                 productDiv.innerHTML = `
                     <img src="${product.images[0]}" alt="${product.name}" onclick="openModal(${index})">
                     <h2>${product.name}</h2>
-                    <p>Цена: ${product.price}₽</p>
+                    <p class="price">${product.price}₽</p>
                     <button class="btn" onclick="orderNow('${product.name}')">Заказать</button>
                     <button class="btn" onclick="addToCart('${product.name}', ${product.price})">В корзину 🛒</button>
                 `;
