@@ -293,12 +293,15 @@
         }
 
         /* Responsive Styles */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .gallery {
-                flex-direction: column;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
 
             .product-card {
+                width: 100%;
                 padding: 1em;
             }
 
